@@ -6,12 +6,23 @@ Built with **Clean Architecture**, **DDD**, and **CQRS (MediatR)**.
 
 ## Solution structure
 
+```
+src/
+  EmployeeLeaveManagement.Domain
+  EmployeeLeaveManagement.Application
+  EmployeeLeaveManagement.Infrastructure
+  EmployeeLeaveManagement.Web
+tests/
+  EmployeeLeaveManagement.Domain.UnitTests
+```
+
 | Project | Responsibility |
 |---------|----------------|
-| `EmployeeLeaveManagement.Domain` | Aggregates, value objects, domain rules, repository ports |
-| `EmployeeLeaveManagement.Application` | Commands/queries, validators, DTOs |
-| `EmployeeLeaveManagement.Infrastructure` | EF Core, SQL Server, Identity, repository implementations |
-| `EmployeeLeaveManagement.Web` | MVC controllers, Razor views, Bootstrap UI |
+| `src/EmployeeLeaveManagement.Domain` | Aggregates, value objects, domain rules, repository ports |
+| `src/EmployeeLeaveManagement.Application` | Commands/queries, validators, DTOs |
+| `src/EmployeeLeaveManagement.Infrastructure` | EF Core, SQL Server, Identity, repository implementations |
+| `src/EmployeeLeaveManagement.Web` | MVC controllers, Razor views, Bootstrap UI |
+| `tests/EmployeeLeaveManagement.Domain.UnitTests` | Xunit tests for domain business rules |
 
 ## Prerequisites
 
@@ -23,8 +34,8 @@ Built with **Clean Architecture**, **DDD**, and **CQRS (MediatR)**.
 
 Connection strings live in:
 
-- `EmployeeLeaveManagement.Web/appsettings.json`
-- `EmployeeLeaveManagement.Web/appsettings.Development.json`
+- `src/EmployeeLeaveManagement.Web/appsettings.json`
+- `src/EmployeeLeaveManagement.Web/appsettings.Development.json`
 
 Default (Docker SQL Server on port 1433):
 
@@ -53,10 +64,11 @@ docker run -d --name elm-sql \
 ```bash
 dotnet restore
 dotnet build
+dotnet test
 dotnet ef database update \
-  --project EmployeeLeaveManagement.Infrastructure \
-  --startup-project EmployeeLeaveManagement.Web
-dotnet run --project EmployeeLeaveManagement.Web --launch-profile http
+  --project src/EmployeeLeaveManagement.Infrastructure \
+  --startup-project src/EmployeeLeaveManagement.Web
+dotnet run --project src/EmployeeLeaveManagement.Web --launch-profile http
 ```
 
 On first run the app also migrates and seeds demo data automatically.
@@ -93,11 +105,11 @@ Seeded leave types: Annual Leave (20), Sick Leave (10), Casual Leave (5).
 
 ```bash
 dotnet ef migrations add <Name> \
-  --project EmployeeLeaveManagement.Infrastructure \
-  --startup-project EmployeeLeaveManagement.Web \
+  --project src/EmployeeLeaveManagement.Infrastructure \
+  --startup-project src/EmployeeLeaveManagement.Web \
   --output-dir Persistence/Migrations
 
 dotnet ef database update \
-  --project EmployeeLeaveManagement.Infrastructure \
-  --startup-project EmployeeLeaveManagement.Web
+  --project src/EmployeeLeaveManagement.Infrastructure \
+  --startup-project src/EmployeeLeaveManagement.Web
 ```
