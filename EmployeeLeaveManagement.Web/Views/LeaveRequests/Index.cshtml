@@ -1,0 +1,46 @@
+@using EmployeeLeaveManagement.Domain.Enums
+@model IReadOnlyList<EmployeeLeaveManagement.Application.LeaveRequests.Models.LeaveRequestDto>
+@{
+    ViewData["Title"] = "Leave Requests";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">Leave Requests</h1>
+    <a class="btn btn-primary" asp-action="Apply">Apply for Leave</a>
+</div>
+
+<div class="table-responsive bg-white rounded shadow-sm">
+    <table class="table table-hover mb-0 align-middle">
+        <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Days</th>
+            <th>Reason</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var request in Model)
+        {
+            var badgeClass = request.Status switch
+            {
+                LeaveRequestStatus.Approved => "badge-status-approved",
+                LeaveRequestStatus.Rejected => "badge-status-rejected",
+                _ => "badge-status-pending"
+            };
+            <tr>
+                <td>@request.EmployeeName <span class="text-muted small">(@request.EmployeeCode)</span></td>
+                <td>@request.LeaveTypeName</td>
+                <td>@request.StartDate.ToString("yyyy-MM-dd")</td>
+                <td>@request.EndDate.ToString("yyyy-MM-dd")</td>
+                <td>@request.TotalDays</td>
+                <td>@request.Reason</td>
+                <td><span class="badge @badgeClass">@request.Status</span></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,55 @@
+@using EmployeeLeaveManagement.Domain.Enums
+@model IReadOnlyList<EmployeeLeaveManagement.Application.LeaveRequests.Models.LeaveRequestDto>
+@{
+    ViewData["Title"] = "Leave Approvals";
+}
+
+<h1 class="h3 mb-3">Leave Approvals</h1>
+
+<div class="table-responsive bg-white rounded shadow-sm">
+    <table class="table table-hover mb-0 align-middle">
+        <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>Dates</th>
+            <th>Days</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var request in Model)
+        {
+            var badgeClass = request.Status switch
+            {
+                LeaveRequestStatus.Approved => "badge-status-approved",
+                LeaveRequestStatus.Rejected => "badge-status-rejected",
+                _ => "badge-status-pending"
+            };
+            <tr>
+                <td>@request.EmployeeName</td>
+                <td>@request.LeaveTypeName</td>
+                <td>@request.StartDate.ToString("yyyy-MM-dd") – @request.EndDate.ToString("yyyy-MM-dd")</td>
+                <td>@request.TotalDays</td>
+                <td>@request.Reason</td>
+                <td><span class="badge @badgeClass">@request.Status</span></td>
+                <td class="text-end">
+                    @if (request.Status == LeaveRequestStatus.Pending)
+                    {
+                        <form asp-action="Approve" asp-route-id="@request.Id" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                        </form>
+                        <form asp-action="Reject" asp-route-id="@request.Id" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Reject</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

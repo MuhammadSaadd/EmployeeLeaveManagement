@@ -1,0 +1,38 @@
+@model IReadOnlyList<EmployeeLeaveManagement.Application.LeaveTypes.Models.LeaveTypeDto>
+@{
+    ViewData["Title"] = "Leave Types";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">Leave Types</h1>
+    <a class="btn btn-primary" asp-action="Create">Add Leave Type</a>
+</div>
+
+<div class="table-responsive bg-white rounded shadow-sm">
+    <table class="table table-hover mb-0 align-middle">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Maximum Days Allowed</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var leaveType in Model)
+        {
+            <tr>
+                <td>@leaveType.Name</td>
+                <td>@leaveType.MaximumDaysAllowed</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@leaveType.Id">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@leaveType.Id" method="post" class="d-inline"
+                          onsubmit="return confirm('Delete this leave type?');">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

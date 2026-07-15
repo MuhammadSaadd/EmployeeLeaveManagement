@@ -1,0 +1,43 @@
+@model EmployeeLeaveManagement.ViewModels.LeaveRequests.ApplyLeaveViewModel
+@{
+    ViewData["Title"] = "Apply for Leave";
+}
+
+<h1 class="h3 mb-3">Apply for Leave</h1>
+<div class="card card-form">
+    <div class="card-body">
+        <form asp-action="Apply" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="LeaveTypeId" class="form-label"></label>
+                <select asp-for="LeaveTypeId" asp-items="Model.LeaveTypes" class="form-select">
+                    <option value="">Select leave type</option>
+                </select>
+                <span asp-validation-for="LeaveTypeId" class="text-danger"></span>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="StartDate" class="form-label"></label>
+                    <input asp-for="StartDate" class="form-control" type="date"/>
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="EndDate" class="form-label"></label>
+                    <input asp-for="EndDate" class="form-control" type="date"/>
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label asp-for="Reason" class="form-label"></label>
+                <textarea asp-for="Reason" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <a asp-action="Index" class="btn btn-link">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

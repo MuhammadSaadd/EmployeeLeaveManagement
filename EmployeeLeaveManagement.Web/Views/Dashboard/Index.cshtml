@@ -1,0 +1,44 @@
+@model EmployeeLeaveManagement.Application.Dashboard.Models.DashboardStatsDto
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="h3 mb-1">Dashboard</h1>
+        <p class="text-muted mb-0">Leave activity at a glance.</p>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4 col-lg">
+        <div class="stat-tile p-3">
+            <div class="text-muted small">Total Employees</div>
+            <div class="stat-value">@Model.TotalEmployees</div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg">
+        <div class="stat-tile p-3">
+            <div class="text-muted small">Total Leave Requests</div>
+            <div class="stat-value">@Model.TotalLeaveRequests</div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg">
+        <div class="stat-tile p-3">
+            <div class="text-muted small">Pending</div>
+            <div class="stat-value">@Model.PendingRequests</div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg">
+        <div class="stat-tile p-3">
+            <div class="text-muted small">Approved</div>
+            <div class="stat-value">@Model.ApprovedRequests</div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg">
+        <div class="stat-tile p-3">
+            <div class="text-muted small">Rejected</div>
+            <div class="stat-value">@Model.RejectedRequests</div>
+        </div>
+    </div>
+</div>
