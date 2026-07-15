@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "Razor Pages Patterns": {
+      "source": "wshaddix/dotnet-skills",
+      "sourceType": "github",
+      "skillPath": "skills/razor-pages-patterns/SKILL.md",
+      "computedHash": "317654b47a22cc462222faf64d603929014cadaa269cb1a78ac6c46ea8a16ad1"
+    },
+    "bootstrap": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "bootstrap/SKILL.md",
+      "computedHash": "99c121c1791cbbadcb16b0ff4d3928c08d402e999a6611d2cbece613d98e7e97"
+    },
+    "clean-architecture": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "clean-architecture/SKILL.md",
+      "computedHash": "91e3c122b6951e485b4eca773472708fc08b9bbb68247aa9c75c975df380630c"
+    },
+    "domain-driven-design": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "domain-driven-design/SKILL.md",
+      "computedHash": "3a84c4c48b3d1bcdf07e6ba096749679f97915dd6b4f9c87ab8a715b936fed30"
+    },
+    "dotnet-best-practices": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/dotnet-best-practices/SKILL.md",
+      "computedHash": "9ef94db7f06c167d544369817e5a4415eeb7886dcff0d47026837a1aada260e3"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+    }
+  }
+}
