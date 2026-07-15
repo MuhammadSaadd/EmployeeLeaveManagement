@@ -1,6 +1,6 @@
 # Employee Leave Management System
 
-ASP.NET Core MVC (.NET 10) application for submitting and approving employee leave requests.
+ASP.NET Core MVC (.NET 8) application for submitting and approving employee leave requests.
 
 Built with **Clean Architecture**, **DDD**, and **CQRS (MediatR)**.
 
@@ -26,7 +26,7 @@ tests/
 
 ## Prerequisites
 
-- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - SQL Server (LocalDB, SQL Server Express, Docker, or Azure SQL)
 - `dotnet-ef` tool: `dotnet tool install --global dotnet-ef`
 
