@@ -45,7 +45,7 @@ public static class DbSeeder
                 "Alex Manager",
                 "Human Resources",
                 "manager@demo.local",
-                "+1-555-0100",
+                "01256746498",
                 manager.Id);
 
             var staffEmployee = Employee.Create(
@@ -53,7 +53,7 @@ public static class DbSeeder
                 "Sam Employee",
                 "Engineering",
                 "employee@demo.local",
-                "+1-555-0101",
+                "01145867412",
                 employeeUser.Id);
 
             context.Employees.AddRange(managerEmployee, staffEmployee);
