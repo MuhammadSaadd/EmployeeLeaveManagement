@@ -6,9 +6,6 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Employees.Commands;
 
-/// <summary>
-/// Updates an existing employee.
-/// </summary>
 public sealed record UpdateEmployeeCommand(
     Guid Id,
     string EmployeeCode,
@@ -17,9 +14,6 @@ public sealed record UpdateEmployeeCommand(
     string Email,
     string PhoneNumber) : IRequest<Result>;
 
-/// <summary>
-/// Validates <see cref="UpdateEmployeeCommand"/>.
-/// </summary>
 public sealed class UpdateEmployeeCommandValidator : AbstractValidator<UpdateEmployeeCommand>
 {
     public UpdateEmployeeCommandValidator()
@@ -33,9 +27,6 @@ public sealed class UpdateEmployeeCommandValidator : AbstractValidator<UpdateEmp
     }
 }
 
-/// <summary>
-/// Handles <see cref="UpdateEmployeeCommand"/>.
-/// </summary>
 public sealed class UpdateEmployeeCommandHandler(
     IEmployeeRepository employeeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<UpdateEmployeeCommand, Result>

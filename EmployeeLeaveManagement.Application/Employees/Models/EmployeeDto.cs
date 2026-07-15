@@ -1,8 +1,5 @@
 namespace EmployeeLeaveManagement.Application.Employees.Models;
 
-/// <summary>
-/// Read model for employee screens.
-/// </summary>
 public sealed class EmployeeDto
 {
     public Guid Id { get; init; }

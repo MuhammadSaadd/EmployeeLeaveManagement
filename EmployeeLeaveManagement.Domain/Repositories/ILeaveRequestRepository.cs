@@ -4,9 +4,6 @@ using EmployeeLeaveManagement.Domain.ValueObjects;
 
 namespace EmployeeLeaveManagement.Domain.Repositories;
 
-/// <summary>
-/// Persistence port for the <see cref="LeaveRequest"/> aggregate.
-/// </summary>
 public interface ILeaveRequestRepository
 {
     Task<LeaveRequest?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);

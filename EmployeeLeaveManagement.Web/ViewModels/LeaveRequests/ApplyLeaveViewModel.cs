@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EmployeeLeaveManagement.ViewModels.LeaveRequests;
 
-/// <summary>
-/// Apply-for-leave form model.
-/// </summary>
 public sealed class ApplyLeaveViewModel
 {
     [Required]

@@ -7,9 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeLeaveManagement.Controllers;
 
-/// <summary>
-/// Manager leave approval screens.
-/// </summary>
 [Authorize(Roles = AppRoles.Manager)]
 public sealed class LeaveApprovalsController(IMediator mediator) : Controller
 {

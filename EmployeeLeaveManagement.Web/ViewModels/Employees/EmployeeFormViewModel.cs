@@ -2,9 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EmployeeLeaveManagement.ViewModels.Employees;
 
-/// <summary>
-/// Create/edit employee form model.
-/// </summary>
 public sealed class EmployeeFormViewModel
 {
     public Guid? Id { get; set; }

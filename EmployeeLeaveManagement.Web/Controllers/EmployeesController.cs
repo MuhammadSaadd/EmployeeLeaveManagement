@@ -9,9 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeLeaveManagement.Controllers;
 
-/// <summary>
-/// Employee CRUD screens.
-/// </summary>
 [Authorize(Roles = AppRoles.Manager)]
 public sealed class EmployeesController(IMediator mediator) : Controller
 {

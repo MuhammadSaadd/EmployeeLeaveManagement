@@ -5,14 +5,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Employees.Commands;
 
-/// <summary>
-/// Deletes an employee.
-/// </summary>
 public sealed record DeleteEmployeeCommand(Guid Id) : IRequest<Result>;
 
-/// <summary>
-/// Validates <see cref="DeleteEmployeeCommand"/>.
-/// </summary>
 public sealed class DeleteEmployeeCommandValidator : AbstractValidator<DeleteEmployeeCommand>
 {
     public DeleteEmployeeCommandValidator()
@@ -21,9 +15,6 @@ public sealed class DeleteEmployeeCommandValidator : AbstractValidator<DeleteEmp
     }
 }
 
-/// <summary>
-/// Handles <see cref="DeleteEmployeeCommand"/>.
-/// </summary>
 public sealed class DeleteEmployeeCommandHandler(
     IEmployeeRepository employeeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<DeleteEmployeeCommand, Result>

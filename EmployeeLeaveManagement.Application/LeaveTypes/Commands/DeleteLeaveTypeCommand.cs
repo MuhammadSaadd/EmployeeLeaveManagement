@@ -5,14 +5,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveTypes.Commands;
 
-/// <summary>
-/// Deletes a leave type.
-/// </summary>
 public sealed record DeleteLeaveTypeCommand(Guid Id) : IRequest<Result>;
 
-/// <summary>
-/// Validates <see cref="DeleteLeaveTypeCommand"/>.
-/// </summary>
 public sealed class DeleteLeaveTypeCommandValidator : AbstractValidator<DeleteLeaveTypeCommand>
 {
     public DeleteLeaveTypeCommandValidator()
@@ -21,9 +15,6 @@ public sealed class DeleteLeaveTypeCommandValidator : AbstractValidator<DeleteLe
     }
 }
 
-/// <summary>
-/// Handles <see cref="DeleteLeaveTypeCommand"/>.
-/// </summary>
 public sealed class DeleteLeaveTypeCommandHandler(
     ILeaveTypeRepository leaveTypeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<DeleteLeaveTypeCommand, Result>

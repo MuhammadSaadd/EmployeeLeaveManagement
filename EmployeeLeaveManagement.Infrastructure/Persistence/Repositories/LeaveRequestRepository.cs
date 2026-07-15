@@ -6,9 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence.Repositories;
 
-/// <summary>
-/// EF Core implementation of <see cref="ILeaveRequestRepository"/>.
-/// </summary>
 public sealed class LeaveRequestRepository(ApplicationDbContext context) : ILeaveRequestRepository
 {
     public Task<LeaveRequest?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default) =>

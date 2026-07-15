@@ -6,9 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeLeaveManagement.Controllers;
 
-/// <summary>
-/// Handles authentication screens.
-/// </summary>
 public sealed class AccountController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
     : Controller
 {

@@ -8,9 +8,6 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveRequests.Commands;
 
-/// <summary>
-/// Submits a leave request for an employee.
-/// </summary>
 public sealed record SubmitLeaveRequestCommand(
     Guid EmployeeId,
     Guid LeaveTypeId,
@@ -18,9 +15,6 @@ public sealed record SubmitLeaveRequestCommand(
     DateOnly EndDate,
     string Reason) : IRequest<Result<Guid>>;
 
-/// <summary>
-/// Validates <see cref="SubmitLeaveRequestCommand"/>.
-/// </summary>
 public sealed class SubmitLeaveRequestCommandValidator : AbstractValidator<SubmitLeaveRequestCommand>
 {
     public SubmitLeaveRequestCommandValidator()
@@ -35,9 +29,6 @@ public sealed class SubmitLeaveRequestCommandValidator : AbstractValidator<Submi
     }
 }
 
-/// <summary>
-/// Handles <see cref="SubmitLeaveRequestCommand"/>.
-/// </summary>
 public sealed class SubmitLeaveRequestCommandHandler(
     IEmployeeRepository employeeRepository,
     ILeaveTypeRepository leaveTypeRepository,

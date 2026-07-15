@@ -2,9 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EmployeeLeaveManagement.ViewModels.LeaveTypes;
 
-/// <summary>
-/// Create/edit leave type form model.
-/// </summary>
 public sealed class LeaveTypeFormViewModel
 {
     public Guid? Id { get; set; }

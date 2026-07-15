@@ -2,9 +2,6 @@ using EmployeeLeaveManagement.Domain.Enums;
 
 namespace EmployeeLeaveManagement.Application.LeaveRequests.Models;
 
-/// <summary>
-/// Read model for leave request screens.
-/// </summary>
 public sealed class LeaveRequestDto
 {
     public Guid Id { get; init; }

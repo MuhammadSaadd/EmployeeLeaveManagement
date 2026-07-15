@@ -4,9 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeLeaveManagement.Controllers;
 
-/// <summary>
-/// Generic home/error endpoints.
-/// </summary>
 public sealed class HomeController : Controller
 {
     [AllowAnonymous]

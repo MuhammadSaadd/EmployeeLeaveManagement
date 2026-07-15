@@ -2,9 +2,6 @@ using EmployeeLeaveManagement.Domain.Entities;
 
 namespace EmployeeLeaveManagement.Domain.Repositories;
 
-/// <summary>
-/// Persistence port for the <see cref="Employee"/> aggregate.
-/// </summary>
 public interface IEmployeeRepository
 {
     Task<Employee?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);

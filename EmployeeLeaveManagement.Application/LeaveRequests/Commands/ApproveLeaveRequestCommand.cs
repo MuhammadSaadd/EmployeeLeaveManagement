@@ -6,14 +6,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveRequests.Commands;
 
-/// <summary>
-/// Approves a pending leave request.
-/// </summary>
 public sealed record ApproveLeaveRequestCommand(Guid Id) : IRequest<Result>;
 
-/// <summary>
-/// Validates <see cref="ApproveLeaveRequestCommand"/>.
-/// </summary>
 public sealed class ApproveLeaveRequestCommandValidator : AbstractValidator<ApproveLeaveRequestCommand>
 {
     public ApproveLeaveRequestCommandValidator()
@@ -22,9 +16,6 @@ public sealed class ApproveLeaveRequestCommandValidator : AbstractValidator<Appr
     }
 }
 
-/// <summary>
-/// Handles <see cref="ApproveLeaveRequestCommand"/>.
-/// </summary>
 public sealed class ApproveLeaveRequestCommandHandler(
     ILeaveRequestRepository leaveRequestRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<ApproveLeaveRequestCommand, Result>

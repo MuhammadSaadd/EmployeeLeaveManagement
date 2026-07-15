@@ -4,9 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence.Repositories;
 
-/// <summary>
-/// EF Core implementation of <see cref="IEmployeeRepository"/>.
-/// </summary>
 public sealed class EmployeeRepository(ApplicationDbContext context) : IEmployeeRepository
 {
     public Task<Employee?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default) =>

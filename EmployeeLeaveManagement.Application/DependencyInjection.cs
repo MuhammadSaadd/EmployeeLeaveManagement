@@ -6,16 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EmployeeLeaveManagement.Application;
 
-/// <summary>
-/// Registers application-layer services (MediatR, FluentValidation).
-/// </summary>
 public static class DependencyInjection
 {
-    /// <summary>
-    /// Adds CQRS and validation services for the application layer.
-    /// </summary>
-    /// <param name="services">Service collection.</param>
-    /// <returns>The same service collection.</returns>
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         var assembly = Assembly.GetExecutingAssembly();

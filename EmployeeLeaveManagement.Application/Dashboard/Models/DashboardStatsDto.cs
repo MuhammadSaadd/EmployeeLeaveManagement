@@ -1,8 +1,5 @@
 namespace EmployeeLeaveManagement.Application.Dashboard.Models;
 
-/// <summary>
-/// Aggregated counters for the management dashboard.
-/// </summary>
 public sealed class DashboardStatsDto
 {
     public int TotalEmployees { get; init; }

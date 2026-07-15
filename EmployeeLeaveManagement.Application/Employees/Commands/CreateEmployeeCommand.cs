@@ -7,9 +7,6 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Employees.Commands;
 
-/// <summary>
-/// Creates a new employee.
-/// </summary>
 public sealed record CreateEmployeeCommand(
     string EmployeeCode,
     string Name,
@@ -17,9 +14,6 @@ public sealed record CreateEmployeeCommand(
     string Email,
     string PhoneNumber) : IRequest<Result<Guid>>;
 
-/// <summary>
-/// Validates <see cref="CreateEmployeeCommand"/>.
-/// </summary>
 public sealed class CreateEmployeeCommandValidator : AbstractValidator<CreateEmployeeCommand>
 {
     public CreateEmployeeCommandValidator()
@@ -32,9 +26,6 @@ public sealed class CreateEmployeeCommandValidator : AbstractValidator<CreateEmp
     }
 }
 
-/// <summary>
-/// Handles <see cref="CreateEmployeeCommand"/>.
-/// </summary>
 public sealed class CreateEmployeeCommandHandler(
     IEmployeeRepository employeeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<CreateEmployeeCommand, Result<Guid>>

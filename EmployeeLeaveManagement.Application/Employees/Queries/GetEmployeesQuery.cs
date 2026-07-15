@@ -4,14 +4,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Employees.Queries;
 
-/// <summary>
-/// Returns all employees.
-/// </summary>
 public sealed record GetEmployeesQuery : IRequest<IReadOnlyList<EmployeeDto>>;
 
-/// <summary>
-/// Handles <see cref="GetEmployeesQuery"/>.
-/// </summary>
 public sealed class GetEmployeesQueryHandler(IEmployeeRepository employeeRepository)
     : IRequestHandler<GetEmployeesQuery, IReadOnlyList<EmployeeDto>>
 {

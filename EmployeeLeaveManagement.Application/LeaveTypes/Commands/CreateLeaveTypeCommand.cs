@@ -7,14 +7,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveTypes.Commands;
 
-/// <summary>
-/// Creates a leave type.
-/// </summary>
 public sealed record CreateLeaveTypeCommand(string Name, int MaximumDaysAllowed) : IRequest<Result<Guid>>;
 
-/// <summary>
-/// Validates <see cref="CreateLeaveTypeCommand"/>.
-/// </summary>
 public sealed class CreateLeaveTypeCommandValidator : AbstractValidator<CreateLeaveTypeCommand>
 {
     public CreateLeaveTypeCommandValidator()
@@ -24,9 +18,6 @@ public sealed class CreateLeaveTypeCommandValidator : AbstractValidator<CreateLe
     }
 }
 
-/// <summary>
-/// Handles <see cref="CreateLeaveTypeCommand"/>.
-/// </summary>
 public sealed class CreateLeaveTypeCommandHandler(
     ILeaveTypeRepository leaveTypeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<CreateLeaveTypeCommand, Result<Guid>>

@@ -4,14 +4,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Employees.Queries;
 
-/// <summary>
-/// Returns a single employee by id.
-/// </summary>
 public sealed record GetEmployeeByIdQuery(Guid Id) : IRequest<EmployeeDto?>;
 
-/// <summary>
-/// Handles <see cref="GetEmployeeByIdQuery"/>.
-/// </summary>
 public sealed class GetEmployeeByIdQueryHandler(IEmployeeRepository employeeRepository)
     : IRequestHandler<GetEmployeeByIdQuery, EmployeeDto?>
 {

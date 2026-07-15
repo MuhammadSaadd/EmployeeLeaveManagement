@@ -1,8 +1,5 @@
 namespace EmployeeLeaveManagement.Domain.Enums;
 
-/// <summary>
-/// Lifecycle status of a leave request.
-/// </summary>
 public enum LeaveRequestStatus
 {
     Pending = 0,

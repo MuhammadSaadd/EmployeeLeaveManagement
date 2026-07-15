@@ -5,14 +5,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Dashboard.Queries;
 
-/// <summary>
-/// Returns dashboard aggregate statistics.
-/// </summary>
 public sealed record GetDashboardStatsQuery : IRequest<DashboardStatsDto>;
 
-/// <summary>
-/// Handles <see cref="GetDashboardStatsQuery"/>.
-/// </summary>
 public sealed class GetDashboardStatsQueryHandler(
     IEmployeeRepository employeeRepository,
     ILeaveRequestRepository leaveRequestRepository)

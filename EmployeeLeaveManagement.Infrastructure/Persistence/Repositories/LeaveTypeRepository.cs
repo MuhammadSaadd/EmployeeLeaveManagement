@@ -4,9 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence.Repositories;
 
-/// <summary>
-/// EF Core implementation of <see cref="ILeaveTypeRepository"/>.
-/// </summary>
 public sealed class LeaveTypeRepository(ApplicationDbContext context) : ILeaveTypeRepository
 {
     public Task<LeaveType?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default) =>

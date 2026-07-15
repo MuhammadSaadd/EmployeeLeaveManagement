@@ -4,14 +4,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveTypes.Queries;
 
-/// <summary>
-/// Returns a leave type by id.
-/// </summary>
 public sealed record GetLeaveTypeByIdQuery(Guid Id) : IRequest<LeaveTypeDto?>;
 
-/// <summary>
-/// Handles <see cref="GetLeaveTypeByIdQuery"/>.
-/// </summary>
 public sealed class GetLeaveTypeByIdQueryHandler(ILeaveTypeRepository leaveTypeRepository)
     : IRequestHandler<GetLeaveTypeByIdQuery, LeaveTypeDto?>
 {

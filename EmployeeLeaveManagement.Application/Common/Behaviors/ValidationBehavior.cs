@@ -3,9 +3,6 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.Common.Behaviors;
 
-/// <summary>
-/// Runs FluentValidation validators before a MediatR handler executes.
-/// </summary>
 public sealed class ValidationBehavior<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators)
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : notnull

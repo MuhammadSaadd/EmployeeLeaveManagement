@@ -13,9 +13,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EmployeeLeaveManagement.Controllers;
 
-/// <summary>
-/// Employee leave request screens.
-/// </summary>
 [Authorize]
 public sealed class LeaveRequestsController(
     IMediator mediator,

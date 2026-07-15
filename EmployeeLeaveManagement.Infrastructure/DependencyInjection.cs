@@ -8,17 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EmployeeLeaveManagement.Infrastructure;
 
-/// <summary>
-/// Registers infrastructure services (EF Core, Identity, repositories).
-/// </summary>
 public static class DependencyInjection
 {
-    /// <summary>
-    /// Adds persistence and identity services.
-    /// </summary>
-    /// <param name="services">Service collection.</param>
-    /// <param name="configuration">Application configuration.</param>
-    /// <returns>The same service collection.</returns>
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection")

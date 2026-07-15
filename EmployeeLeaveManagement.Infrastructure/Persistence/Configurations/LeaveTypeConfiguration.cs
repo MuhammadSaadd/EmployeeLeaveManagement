@@ -4,9 +4,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence.Configurations;
 
-/// <summary>
-/// EF configuration for <see cref="LeaveType"/>.
-/// </summary>
 public sealed class LeaveTypeConfiguration : IEntityTypeConfiguration<LeaveType>
 {
     public void Configure(EntityTypeBuilder<LeaveType> builder)

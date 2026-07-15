@@ -5,9 +5,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence;
 
-/// <summary>
-/// EF Core database context including Identity stores.
-/// </summary>
 public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
     : IdentityDbContext<IdentityUser>(options)
 {

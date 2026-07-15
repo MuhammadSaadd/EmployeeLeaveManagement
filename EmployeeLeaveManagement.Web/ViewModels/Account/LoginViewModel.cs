@@ -2,9 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EmployeeLeaveManagement.ViewModels.Account;
 
-/// <summary>
-/// Login form model.
-/// </summary>
 public sealed class LoginViewModel
 {
     [Required]

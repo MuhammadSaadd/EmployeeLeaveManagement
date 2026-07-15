@@ -6,14 +6,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveTypes.Commands;
 
-/// <summary>
-/// Updates a leave type.
-/// </summary>
 public sealed record UpdateLeaveTypeCommand(Guid Id, string Name, int MaximumDaysAllowed) : IRequest<Result>;
 
-/// <summary>
-/// Validates <see cref="UpdateLeaveTypeCommand"/>.
-/// </summary>
 public sealed class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLeaveTypeCommand>
 {
     public UpdateLeaveTypeCommandValidator()
@@ -24,9 +18,6 @@ public sealed class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLe
     }
 }
 
-/// <summary>
-/// Handles <see cref="UpdateLeaveTypeCommand"/>.
-/// </summary>
 public sealed class UpdateLeaveTypeCommandHandler(
     ILeaveTypeRepository leaveTypeRepository,
     IUnitOfWork unitOfWork) : IRequestHandler<UpdateLeaveTypeCommand, Result>

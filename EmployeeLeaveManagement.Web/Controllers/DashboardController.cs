@@ -5,9 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeLeaveManagement.Controllers;
 
-/// <summary>
-/// Displays leave management dashboard metrics.
-/// </summary>
 [Authorize]
 public sealed class DashboardController(IMediator mediator) : Controller
 {

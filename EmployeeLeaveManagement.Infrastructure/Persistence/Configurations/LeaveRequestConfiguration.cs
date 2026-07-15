@@ -4,9 +4,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence.Configurations;
 
-/// <summary>
-/// EF configuration for <see cref="LeaveRequest"/>.
-/// </summary>
 public sealed class LeaveRequestConfiguration : IEntityTypeConfiguration<LeaveRequest>
 {
     public void Configure(EntityTypeBuilder<LeaveRequest> builder)

@@ -4,14 +4,8 @@ using MediatR;
 
 namespace EmployeeLeaveManagement.Application.LeaveRequests.Queries;
 
-/// <summary>
-/// Returns leave requests, optionally filtered to one employee.
-/// </summary>
 public sealed record GetLeaveRequestsQuery(Guid? EmployeeId = null) : IRequest<IReadOnlyList<LeaveRequestDto>>;
 
-/// <summary>
-/// Handles <see cref="GetLeaveRequestsQuery"/>.
-/// </summary>
 public sealed class GetLeaveRequestsQueryHandler(
     ILeaveRequestRepository leaveRequestRepository,
     IEmployeeRepository employeeRepository,

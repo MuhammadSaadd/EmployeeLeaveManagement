@@ -7,9 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EmployeeLeaveManagement.Infrastructure.Persistence;
 
-/// <summary>
-/// Seeds roles, demo users, employees, and leave types.
-/// </summary>
 public static class DbSeeder
 {
     public static async Task SeedAsync(IServiceProvider services)
