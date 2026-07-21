@@ -46,7 +46,7 @@ Default (Docker SQL Server on port 1433):
 **Windows / LocalDB alternative:**
 
 ```json
-"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=EmployeeLeaveManagement;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true"
+"DefaultConnection": "Server=.;Database=EmployeeLeaveManagement;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true"
 ```
 
 ### Quick SQL Server via Docker
